@@ -1,0 +1,25 @@
+{
+  "name": "story-book-model-graphql",
+  "version": "1.0.0",
+  "description": "Story book model graphql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql",
+    "winext-repo-store"
+  ],
+  "author": "Minh Nguyễn",
+  "license": "ISC",
+  "dependencies": {
+    "winext-repo-store": "git+https://github.com/NguyenPhuocMinh/winext-repo-store.git#041530704ca61180aa51aeb6fde8c4d6e1204c1e"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  }
+}
