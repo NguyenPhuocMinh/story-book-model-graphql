@@ -10,17 +10,17 @@ const queryRootSchema = new GraphQLObjectType({
   description: 'Application Schema Root',
   fields: () => ({
     authors: {
-      type: GraphQLList(AuthorModel),
+      type: new GraphQLList(AuthorModel),
       description: 'List of all Authors',
-      resolve: function () {
-        return [];
+      resolve: function (author) {
+        return [author];
       },
     },
     posts: {
-      type: GraphQLList(PostModel),
+      type: new GraphQLList(PostModel),
       description: 'List of all Posts',
-      resolve: function () {
-        return [];
+      resolve: function (post) {
+        return [post];
       },
     },
   }),

@@ -5,14 +5,17 @@ const AuthorModel = require('./author-model');
 
 const PostModel = new GraphQLObjectType({
   name: 'Post',
-  id: { type: new GraphQLNonNull(GraphQLString) },
-  title: { type: new GraphQLNonNull(GraphQLString) },
-  author: {
-    type: AuthorModel,
-    resolve: function (post) {
-      return post;
+  description: 'Post schema',
+  fields: () => ({
+    id: { type: new GraphQLNonNull(GraphQLString) },
+    title: { type: new GraphQLNonNull(GraphQLString) },
+    author: {
+      type: AuthorModel,
+      resolve: function (post) {
+        return post;
+      },
     },
-  },
+  }),
 });
 
 module.exports = PostModel;
