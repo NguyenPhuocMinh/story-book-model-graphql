@@ -1,21 +1,18 @@
 'use strict';
 
-const { GraphQLNonNull, GraphQLString } = require('winext-repo-store').graphql;
+const { GraphQLObjectType, GraphQLNonNull, GraphQLString } = require('winext-repo-store').graphql;
+const AuthorModel = require('./author-model');
 
-module.exports = {
-  name: 'PostModel',
-  attributes: {
-    id: { type: new GraphQLNonNull(GraphQLString) },
-    title: { type: new GraphQLNonNull(GraphQLString) },
-    author: {
-      type: 'AuthorModel',
-      resolve: function (post) {
-        return post;
-      },
+const PostModel = new GraphQLObjectType({
+  name: 'Post',
+  id: { type: new GraphQLNonNull(GraphQLString) },
+  title: { type: new GraphQLNonNull(GraphQLString) },
+  author: {
+    type: AuthorModel,
+    resolve: function (post) {
+      return post;
     },
   },
-  options: {
-    collection: 'posts',
-    description: 'Post schema',
-  },
-};
+});
+
+module.exports = PostModel;
