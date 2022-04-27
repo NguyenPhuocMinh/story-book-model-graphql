@@ -41,13 +41,8 @@ const mutationRootSchema = new GraphQLObjectType({
       args: {
         name: { type: new GraphQLNonNull(GraphQLString) },
       },
-      resolve: async (parent, args, context, resolveInfo) => {
-        try {
-          console.log('🚀 ~ file: index.js ~ line 45 ~ resolve: ~ args', args);
-          console.log('🚀 ~ file: index.js ~ line 45 ~ resolve: ~ parent', parent);
-        } catch (err) {
-          throw new Error('Failed to insert new author');
-        }
+      resolve: (parent, args) => {
+        return args;
       },
     },
   }),
