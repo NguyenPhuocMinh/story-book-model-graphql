@@ -1,6 +1,7 @@
 'use strict';
 
-const { GraphQLSchema, GraphQLObjectType, GraphQLList } = require('winext-repo-store').graphql;
+const { GraphQLSchema, GraphQLObjectType, GraphQLList, GraphQLNonNull, GraphQLString } =
+  require('winext-repo-store').graphql;
 
 const AuthorModel = require('./models/author-model');
 const PostModel = require('./models/post-model');
@@ -35,8 +36,11 @@ const mutationRootSchema = new GraphQLObjectType({
   name: 'MutationRootAppSchema',
   description: 'Application Mutation Schema Root',
   fields: () => ({
-    createAuthor: {
+    author: {
       type: AuthorModel,
+      args: {
+        name: { type: new GraphQLNonNull(GraphQLString) },
+      },
       resolve: (parent, args) => {
         return args;
       },
