@@ -1,0 +1,1 @@
+# Build model graphql for rest api
