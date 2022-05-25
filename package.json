@@ -13,7 +13,7 @@
   "author": "Minh Nguyễn",
   "license": "ISC",
   "dependencies": {
-    "winext-repo-store": "git+https://github.com/NguyenPhuocMinh/winext-repo-store.git#5b4184183c9a225e3d41e4235a1a2a6a1e5eea2b"
+    "winext-repo-store": "git+https://github.com/NguyenPhuocMinh/winext-repo-store.git#9858798a54dc9ab3514ab54e283ca16cf1c1edba"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
